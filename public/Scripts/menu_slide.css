@@ -1,0 +1,12 @@
+.menu-hide{
+    display: none;
+}
+.actives {
+	background-color: #337779;
+}
+#thumblist li 
+{
+	float: left: ; 
+	display: inline;
+	margin: 2%;
+}

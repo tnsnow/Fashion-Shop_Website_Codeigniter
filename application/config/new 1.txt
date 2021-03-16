@@ -1,0 +1,98 @@
+<section id="mu-contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mu-contact-area">
+                        <!-- start contact content -->
+                        <div class="mu-contact-content">
+                            <div class="row">
+                                @include('page.auth.common.sidebar')
+                                <div class="col-md-9">
+                                    <div class="mu-contact-left">
+                                        <form class="contactform" method="post" action="{{ route('page.register') }}">
+                                            @csrf
+                                            <div class="col-md-9">
+                                                <p class="comment-form-email">
+                                                    <label>Họ và tên <span class="required">*</span></label>
+                                                    <input type="text" value="{{ old('full_name') }}" name="full_name">
+                                                    @if ($errors->first('full_name'))
+                                                        <span class="text-danger">{{ $errors->first('full_name') }}</span>
+                                                    @endif
+                                                </p>
+                                                <p class="comment-form-email">
+                                                    <label for="email">Email <span class="required">*</span></label>
+                                                    <input type="email" aria-required="true" value="" name="email">
+                                                    @if ($errors->first('email'))
+                                                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                                                    @endif
+                                                </p>
+                                                <p class="comment-form-email">
+                                                    <label>Giới tính <span class="required">*</span></label>
+                                                    <select name="gender" id="">
+                                                        <option value="">Chọn giới tính</option>
+                                                        @foreach($gender as $key => $item)
+                                                            <option value="{{ $key }}" {{ old('gender') == $key ? "selected='selected'" : "" }}>{{ $item }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    @if ($errors->first('gender'))
+                                                        <span class="text-danger">{{ $errors->first('gender') }}</span>
+                                                    @endif
+                                                </p>
+                                                <p class="comment-form-email">
+                                                    <label>Số điện thoại <span class="required">*</span></label>
+                                                    <input type="number" value="{{ old('phone') }}" name="phone">
+                                                    @if ($errors->first('phone'))
+                                                        <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                                    @endif
+                                                </p>
+                                                <p class="comment-form-email">
+                                                    <label>Chứng minh thư / Số hộ chiếu <span class="required">*</span></label>
+                                                    <input type="number" value="{{ old('passport') }}" name="passport">
+                                                    @if ($errors->first('passport'))
+                                                        <span class="text-danger">{{ $errors->first('passport') }}</span>
+                                                    @endif
+                                                </p>
+                                                <p class="comment-form-email">
+                                                    <label>Ngày tháng năm sinh <span class="required">*</span></label>
+                                                    <input type="date" value="{{ old('birthday') }}" name="birthday">
+                                                    @if ($errors->first('birthday'))
+                                                        <span class="text-danger">{{ $errors->first('birthday') }}</span>
+                                                    @endif
+                                                </p>
+                                                <p class="comment-form-email">
+                                                    <label>Địa chỉ <span class="required">*</span></label>
+                                                    <input type="text" value="{{ old('address') }}" name="address">
+                                                    @if ($errors->first('address'))
+                                                        <span class="text-danger">{{ $errors->first('address') }}</span>
+                                                    @endif
+                                                </p>
+                                                <p class="comment-form-email">
+                                                    <label>Nghề nghiệp </label>
+                                                    <input type="text" value="{{ old('job') }}" name="job">
+                                                    @if ($errors->first('job'))
+                                                        <span class="text-danger">{{ $errors->first('job') }}</span>
+                                                    @endif
+                                                </p>
+                                            </div>
+                                            <div class="col-md-3">
+
+                                            </div>
+                                            <div class="col-md-9 text-center">
+                                                <p class="form-submit">
+                                                    <input type="submit" value="Cập nhật thông tin" class="mu-post-btn" name="submit" style="width: 50%;">
+                                                </p>
+                                            </div>
+                                            <div class="col-md-3">
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end contact content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
